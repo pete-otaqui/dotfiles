@@ -1,6 +1,8 @@
 set nocompatible              " be iMproved
 filetype off                  " required!
 
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 set autoindent
 set smartindent
@@ -15,9 +17,14 @@ set hidden
 set pastetoggle=<F10>
 
 
+function! HasPaste()
+  if &paste
+    return 'PASTE MODE  '
+  else
+    return ''
+  endif
+endfunction
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
 
 " let Vundle manage Vundle
 " required!
