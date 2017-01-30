@@ -1,21 +1,63 @@
-set nocompatible              " be iMproved
-filetype off                  " required!
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
+" set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
 
-set autoindent
-set smartindent
-set tabstop=2
-set shiftwidth=2
-set expandtab
-set backspace=indent,eol,start
-set t_Co=256
-syntax on
-:let mapleader = ","
-set hidden
-set pastetoggle=<F10>
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
 
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+Plugin 'tpope/vim-fugitive'
+" plugin from http://vim-scripts.org/vim/scripts.html
+"Plugin 'L9'
+" Git plugin not hosted on GitHub
+"Plugin 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (i.e. when working on your own plugin)
+"Plugin 'file:///home/gmarik/path/to/plugin'
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+"Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Install L9 and avoid a Naming conflict if you've already installed a
+" different version somewhere else.
+"Plugin 'ascenator/L9', {'name': 'newL9'}
+
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/NERDTree'
+Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-sensible'
+Plugin 'sheerun/vim-polyglot'
+
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+
+
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Functions
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 function! HasPaste()
   if &paste
@@ -26,40 +68,22 @@ function! HasPaste()
 endfunction
 
 
-" let Vundle manage Vundle
-" required!
-Bundle 'gmarik/vundle'
-" My bundles here:
-"
-" original repos on GitHub
-Bundle 'scrooloose/nerdtree'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'tpope/vim-fugitive'
-Bundle 'bling/vim-airline'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'mattn/emmet-vim'
-Bundle 'tpope/vim-surround'
-Bundle 'pangloss/vim-javascript'
-Bundle 'tpope/vim-markdown'
-Bundle 'nono/vim-handlebars'
-Bundle 'mhinz/vim-tmuxify'
-Bundle 'fholgado/minibufexpl.vim'
-Bundle 'flazz/vim-colorschemes'
-" NB - must come after flazz/vim-colorschemes
-colorscheme Monokai
-
-" vim-scripts repos
-Bundle 'L9'
-Bundle 'FuzzyFinder'
-Bundle 'bufkill.vim'
-" non-GitHub repos
 
 
+set t_Co=256
+syntax on
+set background=dark
 
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Text Editing
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-
+set tabstop=2
+set shiftwidth=2
+set expandtab
+set autoindent
+set smartindent
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -67,7 +91,9 @@ Bundle 'bufkill.vim'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "Always show current position
-" set ruler
+set ruler
+
+"Set leader
 
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
@@ -121,12 +147,3 @@ set laststatus=2
 " Format the status line
 set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
 
-
-
-
-
-
-
-
-
-filetype plugin indent on     " required!
