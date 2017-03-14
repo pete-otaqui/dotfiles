@@ -97,6 +97,7 @@ set pastetoggle=<F10>
 set ruler
 
 "Set leader
+:let mapleader = ","
 
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
