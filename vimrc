@@ -93,11 +93,14 @@ set pastetoggle=<F10>
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"Always show current position
+" Always show current position
 set ruler
 
-"Set leader
+" Set leader
 :let mapleader = ","
+
+" Enable mouse
+set mouse=a
 
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
