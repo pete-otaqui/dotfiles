@@ -34,7 +34,7 @@ Plugin 'scrooloose/NERDTree'
 Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-sensible'
 Plugin 'sheerun/vim-polyglot'
-Plugin 'qkorr/vim-bufkill'
+Plugin 'qpkorr/vim-bufkill'
 Plugin 'vim-airline/vim-airline'
 
 
