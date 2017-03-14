@@ -34,6 +34,8 @@ Plugin 'scrooloose/NERDTree'
 Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-sensible'
 Plugin 'sheerun/vim-polyglot'
+Plugin 'qkorr/vim-bufkill'
+Plugin 'vim-airline/vim-airline'
 
 
 " All of your Plugins must be added before the following line
@@ -147,3 +149,12 @@ set laststatus=2
 " Format the status line
 set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
 
+""""""""""""""""""""""""""""""
+" => Windows and Splits
+""""""""""""""""""""""""""""""
+" map <Leader>q to bufkill
+nnoremap <Leader>q :BD<CR>
+" map <Leader>b to buffer-cycle-backwards
+nnoremap <Leader>b :BB<CR>
+" map <Leader>b to buffer-cycle-forwards
+nnoremap <Leader>f :BF<CR>
