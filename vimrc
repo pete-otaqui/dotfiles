@@ -27,15 +27,17 @@ Plugin 'tpope/vim-fugitive'
 " different version somewhere else.
 "Plugin 'ascenator/L9', {'name': 'newL9'}
 
-Plugin 'jelera/vim-javascript-syntax'
 Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/NERDTree'
 Plugin 'tpope/vim-markdown'
-Plugin 'tpope/vim-sensible'
-Plugin 'sheerun/vim-polyglot'
 Plugin 'qpkorr/vim-bufkill'
 Plugin 'vim-airline/vim-airline'
+Plugin 'patstockwell/vim-monokai-tasty'
+
+Plugin 'pangloss/vim-javascript'
+Plugin 'MaxMEllon/vim-jsx-pretty'
+Plugin 'elzr/vim-json'
+Plugin 'christoomey/vim-tmux-navigator'
 
 
 " All of your Plugins must be added before the following line
@@ -70,12 +72,20 @@ function! HasPaste()
 endfunction
 
 
+" italics
+let &t_ZH="\e[3m"
+let &t_ZR="\e[23m"
 
+" NERDTree fix
+let g:NERDTreeNodeDelimiter = "\u00a0"
 
 set t_Co=256
 syntax on
 set background=dark
 
+let g:airline_theme='monokai_tasty'
+let g:vim_monokai_tasty_italic = 1
+colorscheme vim-monokai-tasty
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text Editing
@@ -157,9 +167,17 @@ set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ 
 """"""""""""""""""""""""""""""
 " => Windows and Splits
 """"""""""""""""""""""""""""""
+" More natural splitting
+set splitbelow
+set splitright
+
 " map <Leader>q to bufkill
 nnoremap <Leader>q :BD<CR>
 " map <Leader>b to buffer-cycle-backwards
 nnoremap <Leader>b :BB<CR>
 " map <Leader>b to buffer-cycle-forwards
 nnoremap <Leader>f :BF<CR>
+""""""""""""""""""""""""""""""
+" => Shortcuts
+""""""""""""""""""""""""""""""
+nnoremap <Leader>n :NERDTree<CR>
