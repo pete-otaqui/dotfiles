@@ -87,6 +87,8 @@ let g:airline_theme='monokai_tasty'
 let g:vim_monokai_tasty_italic = 1
 colorscheme vim-monokai-tasty
 
+
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text Editing
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -98,6 +100,11 @@ set autoindent
 set smartindent
 set pastetoggle=<F10>
 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => QUOTEPLUS - use system clipboard
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set clipboard=unnamed
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -181,3 +188,5 @@ nnoremap <Leader>f :BF<CR>
 " => Shortcuts
 """"""""""""""""""""""""""""""
 nnoremap <Leader>n :NERDTree<CR>
+nnoremap <Leader>t :term<CR>
+
